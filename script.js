@@ -17,8 +17,12 @@ $(document).ready(function () {
 
   $(".saveBtn").on("click", function (e) {
     e.preventDefault();
-    var val = $(this).siblings(".description").val();
-    var hour = $(this).siblings(".description").attr("id");
+    var val = $(this)
+    .siblings(".description")
+    .val();
+    var hour = $(this)
+    .siblings(".description")
+    .attr("id");
     notes[hour] = val;
 
     localStorage.setItem("notes", JSON.stringify(notes));
@@ -32,7 +36,7 @@ $(document).ready(function () {
   });
 
   // Retrieving data from local storage, converting notes to stringify
-  
+
   function getNotes() {
     var notes = localStorage.getItem("notes");
     if (notes) {
